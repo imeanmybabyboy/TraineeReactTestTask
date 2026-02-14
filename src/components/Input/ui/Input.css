@@ -1,0 +1,50 @@
+#inputContainer {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    transition: 0.2s;
+    z-index: 1;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#clearable {
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.212);
+    padding: 4px 10px;
+    margin-left: 10px;
+    transition: 0.1s;
+    position: absolute;
+    right: -40px;
+}
+
+#clarable::after {
+    content: "";
+    width: 150%;
+    height: 150%;
+    display: block;
+}
+
+#clearable:hover {
+    background-color: rgba(0, 0, 0, 0.483);
+}
+
+#clearable:active {
+    scale: 0.95;
+}
+
+#passIconContainer {
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+}
+
+.bi-eye-slash, .bi-eye {
+    cursor: pointer;
+}

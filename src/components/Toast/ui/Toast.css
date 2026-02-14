@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+#toastTaskContainer {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#toastContainer {
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #b6f8c4;
+    border-radius: 10px;
+
+    opacity: 0;
+    display: flex;
+    gap: 15px;
+    padding: 5px 10px;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#toastContainer button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 5px;
+    background: none;
+    cursor: pointer;
+}
+
+#toastContainer.open.fade {
+    visibility: visible;
+    opacity: 1;
+}
+
+#toastContainer.close.fade {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#toastContainer.open.slide {
+    animation: slideIn 0.3s forwards ease-in-out;
+    opacity: 1;
+}
+
+#toastContainer.close.slide {
+    animation: slideOut 0.3s forwards ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0%);
+        display: flex;
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(200%);
+        display: none;
+    }
+}
